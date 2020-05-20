@@ -1,12 +1,12 @@
 
-
+##Fortis site##
 
 When I enable debug mode in wp-config.php, I’m getting this message
 
 Deprecated: Function create_function() is deprecated in /var/www/vhosts/example.com/httpdocs/wp-content/themes/salient/functions.php on line 5598
 
 Deprecated: The each() function is deprecated. This message will be suppressed on further calls in 
-/var/www/vhosts/fortis.com.mt/httpdocs/wp-content/plugins/js_composer_salient/include/classes/core/class-vc-mapper.php on line 111
+/var/www/vhosts/example.com/httpdocs/wp-content/plugins/js_composer_salient/include/classes/core/class-vc-mapper.php on line 111
 
 
 Solution:
