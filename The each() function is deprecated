@@ -1,0 +1,24 @@
+
+
+
+When I enable debug mode in wp-config.php, I’m getting this message
+
+Deprecated: Function create_function() is deprecated in /var/www/vhosts/example.com/httpdocs/wp-content/themes/salient/functions.php on line 5598
+
+Deprecated: The each() function is deprecated. This message will be suppressed on further calls in 
+/var/www/vhosts/fortis.com.mt/httpdocs/wp-content/plugins/js_composer_salient/include/classes/core/class-vc-mapper.php on line 111
+
+
+Solution:
+
+Make changes to these lines
+
+functions.php on line 5598
+
+(OLD)add_filter( 'loop_shop_per_page', create_function( '$cols', 'return '.$nectar_woo_products_per_page.';' ), 20 );
+(NEW)add_filter( 'loop_shop_per_page', function($cols) {return $nectar_woo_products_per_page;},  20 );
+
+class-vc-mapper.php on line 111
+
+(OLD)while ( $activity = each( $this->init_activity ) ) {
+(NEW)foreach ( $this->init_activity as $activity )  {
